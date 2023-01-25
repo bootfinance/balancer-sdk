@@ -19,6 +19,13 @@ export interface ComposableStableCreatePoolParameters
   tokenRateCacheDurations: number[] | string[];
   exemptFromYieldProtocolFeeFlags: boolean[];
 }
+export interface ComposableCustomCreatePoolParameters
+  extends CreatePoolParameters {
+  amplificationParameter: number | string;
+  rateProviders: string[];
+  tokenRateCacheDurations: number[] | string[];
+  exemptFromYieldProtocolFeeFlags: boolean[];
+}
 export interface WeightedCreatePoolParameters extends CreatePoolParameters {
   weights: BigNumberish[];
 }

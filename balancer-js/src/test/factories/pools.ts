@@ -43,6 +43,19 @@ export type ComposableStableInfo = {
   poolToken: SubgraphToken;
 };
 
+export interface ComposableCustomParams {
+  id: string;
+  symbol: string;
+  address: string;
+  childTokens: SubgraphToken[];
+  tokenbalance: string;
+}
+
+export type ComposableCustomInfo = {
+  pool: Pool;
+  poolToken: SubgraphToken;
+};
+
 export interface BoostedParams {
   linearPoolsParams: LinearParams;
   rootId: string;

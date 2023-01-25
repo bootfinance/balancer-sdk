@@ -1,6 +1,7 @@
 import { WeightedPoolEncoder } from '@/pool-weighted/encoder';
 import { StablePoolEncoder } from '@/pool-stable/encoder';
 import { ComposableStablePoolEncoder } from '@/pool-composable-stable';
+import { ComposableCustomPoolEncoder } from '@/pool-composable-custom';
 import { PoolType } from '@/types';
 
 export const getEncoder = (
@@ -9,6 +10,7 @@ export const getEncoder = (
   | typeof WeightedPoolEncoder
   | typeof StablePoolEncoder
   | typeof ComposableStablePoolEncoder
+  | typeof ComposableCustomPoolEncoder
   | undefined => {
   switch (poolType) {
     case PoolType.Weighted:
@@ -26,6 +28,8 @@ export const getEncoder = (
 
     case PoolType.ComposableStable:
       return ComposableStablePoolEncoder;
+    case PoolType.ComposableCustom:
+      return ComposableCustomPoolEncoder;
 
     default:
       break;

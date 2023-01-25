@@ -1,6 +1,7 @@
 import { BalancerSdkConfig, PoolType } from '@/types';
 import { Stable } from './pool-types/stable.module';
 import { ComposableStable } from './pool-types/composableStable.module';
+import { ComposableCustom } from './pool-types/composableCustom.module';
 import { Weighted } from './pool-types/weighted.module';
 import { MetaStable } from './pool-types/metaStable.module';
 import { StablePhantom } from './pool-types/stablePhantom.module';
@@ -18,6 +19,7 @@ export class PoolTypeConcerns {
     public weighted = new Weighted(),
     public stable = new Stable(),
     public composableStable = new ComposableStable(),
+    public composableCustom = new ComposableCustom(),
     public metaStable = new MetaStable(),
     public stablePhantom = new StablePhantom(),
     public linear = new Linear()
@@ -29,6 +31,7 @@ export class PoolTypeConcerns {
     | Weighted
     | Stable
     | ComposableStable
+    | ComposableCustom
     | MetaStable
     | StablePhantom
     | Linear {
@@ -45,6 +48,9 @@ export class PoolTypeConcerns {
       case 'HighAmpComposableStable':
       case 'ComposableStable': {
         return new ComposableStable();
+      }
+      case 'ComposableCustom': {
+        return new ComposableCustom();
       }
       case 'MetaStable': {
         return new MetaStable();

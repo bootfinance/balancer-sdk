@@ -193,6 +193,8 @@ export const BALANCER_NETWORK_CONFIG: Record<Network, BalancerNetworkConfig> = {
         weightedPoolFactory: '0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9',
         composableStablePoolFactory:
           '0x85a80afee867adf27b50bdb7b76da70f1e853062',
+        composableCustomPoolFactory:
+          '0xe73E7497397141e7be019d08b0f47Ae7eDD3BB2f',
       },
       tokens: {
         wrappedNativeAsset: '0xdFCeA9088c8A88A76FF74892C1457C17dfeef9C1',

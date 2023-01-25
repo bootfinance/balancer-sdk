@@ -20,7 +20,8 @@ type FactoryType =
   | 'managedPool'
   | 'liquidityBootstrappingPool'
   | 'boostedPool'
-  | 'composableStablePool';
+  | 'composableStablePool'
+  | 'composableCustomPool';
 
 type PoolMetadata = {
   name: string;
@@ -203,6 +204,7 @@ const POOLS_GOERLI: Pools = {
     '0xb0c726778c3ae4b3454d85557a48e8fa502bdd6a': 'liquidityBootstrappingPool', // LBP (zero protocol fee)
     '0x41e9036ae350baedcc7107760a020dca3c0731ec': 'boostedPool',
     '0xb848f50141f3d4255b37ac288c25c109104f2158': 'composableStablePool',
+    '0xe73E7497397141e7be019d08b0f47Ae7eDD3BB2f': 'composableCustomPool',
     '0x94f68b54191f62f781fe8298a8a5fa3ed772d227': 'weightedPool', // weighted pool v2
   },
   Stakable: {

@@ -2,6 +2,7 @@ import { BalancerNetworkConfig, PoolType } from '@/types';
 import { BalancerError, BalancerErrorCode } from '@/balancerErrors';
 import { PoolFactory } from '@/modules/pools/factory/pool-factory';
 import { ComposableStableFactory } from '@/modules/pools/factory/composable-stable/composable-stable.factory';
+import { ComposableCustomFactory } from '@/modules/pools/factory/composable-custom/composable-custom.factory';
 import { WeightedFactory } from '@/modules/pools/factory/weighted/weighted.factory';
 
 /**
@@ -29,6 +30,9 @@ export class PoolFactory__factory {
       }
       case 'ComposableStable': {
         return new ComposableStableFactory(this.networkConfig);
+      }
+      case 'ComposableCustom': {
+        return new ComposableCustomFactory(this.networkConfig);
       }
       case 'MetaStable': {
         throw new BalancerError(BalancerErrorCode.UNSUPPORTED_POOL_TYPE);

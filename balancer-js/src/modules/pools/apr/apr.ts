@@ -115,6 +115,7 @@ export class PoolApr {
               tokenYield * (1 - (await this.protocolSwapFeePercentage(pool)));
           } else if (
             pool.poolType === 'ComposableStable' ||
+            pool.poolType === 'ComposableCustom' ||
             (pool.poolType === 'Weighted' && pool.poolTypeVersion === 2)
           ) {
             if (token.isExemptFromYieldProtocolFee) {
@@ -138,6 +139,7 @@ export class PoolApr {
             let subApr = subtokenAprs.total;
             if (
               pool.poolType === 'ComposableStable' ||
+              pool.poolType === 'ComposableCustom' ||
               (pool.poolType === 'Weighted' && pool.poolTypeVersion === 2)
             ) {
               if (!token.isExemptFromYieldProtocolFee) {
@@ -463,6 +465,7 @@ export class PoolApr {
 
     if (
       pool.poolType == 'ComposableStable' ||
+      pool.poolType === 'ComposableCustom' ||
       (pool.poolType == 'Weighted' && pool.poolTypeVersion == 2)
     ) {
       fee = 0;

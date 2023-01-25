@@ -75,6 +75,7 @@ export interface ContractAddresses {
   protocolFeePercentagesProvider?: string;
   weightedPoolFactory?: string;
   composableStablePoolFactory?: string;
+  composableCustomPoolFactory?: string;
 }
 
 export interface BalancerNetworkConfig {
@@ -254,6 +255,7 @@ export enum PoolType {
   Stable = 'Stable',
   HighAmpComposableStable = 'HighAmpComposableStable',
   ComposableStable = 'ComposableStable',
+  ComposableCustom = 'ComposableCustom',
   MetaStable = 'MetaStable',
   StablePhantom = 'StablePhantom',
   LiquidityBootstrapping = 'LiquidityBootstrapping',
